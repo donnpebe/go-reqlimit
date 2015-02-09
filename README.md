@@ -13,8 +13,7 @@ Usage
 import "github.com/donnpebe/go-reqlimit"
 ```
 
-- Use it in your code
-Very basic use, create new ReqConfig and then create a new ReqLimiter
+- Use it in your code (create new ReqConfig and then create a new ReqLimiter)
 ```Go
 // It will assume that you have redis installed in localhost port 6379 and doesn't have a password 
 rq := reqlimit.New()
@@ -31,7 +30,9 @@ rpm := rq.NewLimiter("rpm", 60, 30)
 
 // test if request exceed the limit with Exceed method
 // where r is *http.Request
-if rps.Exceed(r) || rpm.Exceed(r) {
+sok, _ := rps.Exceed(r)
+mok, _ := rpm.Exceed(r)
+if sok || mok {
 	http.Error(w, "Request limit exceeded", http.StatusForbidden)
 }
 ```
