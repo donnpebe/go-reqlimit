@@ -37,6 +37,11 @@ if sok || mok {
 }
 ```
 
+Disclaimer
+----------
+
+The code in this repo is a toy project and has not been fully tested. I will improve it later. Use at your own risk.
+
 Example
 -------
 
